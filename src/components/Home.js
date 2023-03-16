@@ -11,6 +11,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { Link } from "react-router-dom";
+
 function Home(){
 
     const { users } = useContext(BankContext);
@@ -19,10 +20,7 @@ function Home(){
         setAddUserModal(!adduserModal);
     }
 
-    const { fetchUsers  } = useContext(BankContext);
-        useEffect(()=>{
-            fetchUsers();
-        }, [])
+    console.log("111111111");
 
     const usersMap = users.map(user=> {
         let redirectRoute = `/accounts/${user.id}`;
@@ -37,7 +35,7 @@ function Home(){
                 <TableCell align="right">{user.socialSecurityNumber}</TableCell>
                 <TableCell align="right">{user.phoneNumber}</TableCell>
                 <TableCell align="right">{user.accounts?.length}</TableCell>
-                <TableCell align="right"><Button variant="contained"><Link to={redirectRoute} state={{userId:user.id}} style={{textDecoration:"none", color:"#fff"}}>View</Link></Button></TableCell>
+                <TableCell align="right"><Link to={redirectRoute} state={{userId:user.id}} style={{textDecoration:"none", color:"#fff"}}><Button variant="contained">View</Button></Link></TableCell>
               </TableRow>
             
         )});

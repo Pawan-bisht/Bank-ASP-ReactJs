@@ -24,7 +24,7 @@ function UserForm ({handleClose}) {
     const formValidation = (e) => {
         e.preventDefault();
         if(name === '' || address=== '' || ssn === '' || phoneNumber === '' || dob === '' || age === ''){
-            setErrorPage(true);
+            return alert('Please fill all the entries!');
         }
         const postBody = createPostObject(name, ssn, phoneNumber, address, dob, age);
         createUser(postBody);

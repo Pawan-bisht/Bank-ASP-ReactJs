@@ -6,6 +6,10 @@ import AccountPage from './components/AccountPage';
 import NavBar from './components/NavBar';
 
 function App() {
+  const { fetchUsers  } = useContext(BankContext);
+      useEffect(()=>{
+            fetchUsers();
+        }, [])
   return (
     <div>
       <NavBar />

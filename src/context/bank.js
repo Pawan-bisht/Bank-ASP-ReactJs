@@ -16,7 +16,7 @@ function Provider({children}) {
   const createUser = async (user) => {
     try{
       const result = await axios.post(`${HttpEndpointUrl}/Bank/create-user`, user);
-      const updatedUsers = [...result.data];
+      const updatedUsers = [...users, result.data];
       setUsers(updatedUsers);
     } catch(e) {
       console.log(e);
