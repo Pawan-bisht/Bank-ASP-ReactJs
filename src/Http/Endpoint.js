@@ -1,0 +1,1 @@
+export const HttpEndpointUrl = "http://localhost:5065"
