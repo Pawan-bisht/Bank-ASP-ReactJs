@@ -47,7 +47,7 @@ export default function AccountForm(props){
         autoComplete="off"
         onSubmit={formValidation}
         >
-    <InputLabel>Amoun to be deposite</InputLabel>
+    <InputLabel>Amount to be deposite</InputLabel>
     <TextField style={{width:'25rem'}} required id="outlined-basic" label="Ammout" variant="outlined" value={deposite} onChange={(e) => setDeposite(e.target.value)} />
     <div><Button variant="contained" type="submit" >Submit</Button></div>
     </Box>
